@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 管理系统的登入与登出 -->
+	<package name="login-package" extends="main-default" namespace="/">
+		<default-interceptor-ref name="defaultStack"/>
+		<!-- 请求登录页面 -->
+		<action name="toLogin" class="com.tarena.netctoss.action.main.LoginAction">
+			<result type="dispatcher">/WEB-INF/JSP/login.jsp</result>
+		</action>
+		<!-- 请求登录 -->
+		<action name="login" class="com.tarena.netctoss.action.main.LoginAction" method="login"/>
+		<!-- 请求登出 -->
+		<action name="logout" class="com.tarena.netctoss.action.main.LogoutAction" method="logout"/>
+		<!-- 请求验证码图片 -->
+		<action name="verification" class="com.tarena.netctoss.action.main.VerificationCodeAction" method="code">
+			<result type="stream">
+				<param name="inputName">imgCodeStream</param>
+				<param name="contentType">image/jpg</param>
+			</result>
+		</action>
+		<!-- 请求主页面 -->
+		<action name="main" class="com.tarena.netctoss.action.BaseAction">
+			<interceptor-ref name="checkLoginStack"/>
+			<result>/WEB-INF/JSP/main.jsp</result>
+		</action>
+	</package>
+</struts>

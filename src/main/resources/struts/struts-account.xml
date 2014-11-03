@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="account-package" extends="main-default" namespace="/account">
+		<!-- 账务账号主页 -->
+		<action name="index" class="com.tarena.netctoss.action.account.AccountSearchAction" method="index">
+			<result>/WEB-INF/JSP/account/account_list.jsp</result>
+		</action>
+		
+		<!-- 账务账号开通、暂停与删除 -->
+		<action name="pause" class="com.tarena.netctoss.action.account.AccountSetStatusAction" method="pause"/>
+		<action name="open" class="com.tarena.netctoss.action.account.AccountSetStatusAction" method="open"/>
+		<action name="delete" class="com.tarena.netctoss.action.account.AccountSetStatusAction" method="delete"/>
+		
+		<!-- 修改账务账号 -->
+		<action name="toUpdate" class="com.tarena.netctoss.action.account.AccountUpdateAction" method="toUpdate">
+			<result>/WEB-INF/JSP/account/account_modi.jsp</result>
+		</action>
+		<action name="modify" class="com.tarena.netctoss.action.account.AccountModifyAction" method="modify">
+			<result type="json">
+				<param name="root">msg</param>
+			</result>
+		</action>
+		<!-- 增加账务账号 -->
+		<action name="toAdd" class="com.tarena.netctoss.action.account.AccountAddAction" method="toAdd">
+			<result>/WEB-INF/JSP/account/account_add.jsp</result>
+		</action>
+		<action name="add" class="com.tarena.netctoss.action.account.AccountAddAction" method="add">
+			<result type="json">
+				<param name="root">msg</param>
+			</result>
+		</action>
+		<!-- 查看账务账号详情 -->
+		<action name="detail" class="com.tarena.netctoss.action.account.AccountDetailAction" method="detail">
+			<result>/WEB-INF/JSP/account/account_detail.jsp</result>
+		</action>
+		<action name="getRecommenderId" class="com.tarena.netctoss.action.account.AccountDetailAction" method="getRecommenderId">
+			<result type="json">
+				<param name="root">id</param>
+			</result>
+		</action>
+		<action name="getRecommenderIdcardNo" class="com.tarena.netctoss.action.account.AccountDetailAction" method="getRecommenderIdcardNo">
+			<result type="json">
+				<param name="root">idcardNo</param>
+			</result>
+		</action>
+	</package>
+</struts>

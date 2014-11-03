@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="service-package" extends="main-default" namespace="/service">
+		<action name="index" class="com.tarena.netctoss.action.service.ServiceListAction" method="index">
+			<result>/WEB-INF/JSP/service/service_list.jsp</result>
+		</action>
+		<action name="detail" class="com.tarena.netctoss.action.service.ServiceDetailAction" method="detail">
+			<result>/WEB-INF/JSP/service/service_detail.jsp</result>
+		</action>
+		<action name="pause" class="com.tarena.netctoss.action.service.ServiceStatusAction" method="pause">
+			<result name="json" type="json">
+				<param name="root">ajaxJSON</param>
+			</result>
+		</action>
+		<action name="open" class="com.tarena.netctoss.action.service.ServiceStatusAction" method="open">
+			<result name="json" type="json">
+				<param name="root">ajaxJSON</param>
+			</result>
+		</action>
+		<action name="delete" class="com.tarena.netctoss.action.service.ServiceStatusAction" method="delete">
+			<result name="json" type="json">
+				<param name="root">ajaxJSON</param>
+			</result>
+		</action>
+		<action name="toUpdate" class="com.tarena.netctoss.action.service.ServiceUpdateAction" method="toUpdate">
+			<result>/WEB-INF/JSP/service/service_modi.jsp</result>
+		</action>
+		<action name="update" class="com.tarena.netctoss.action.service.ServiceUpdateAction" method="update">
+			<result name="json" type="json">
+				<param name="root">ajaxJSON</param>
+			</result>
+		</action>
+	</package>
+</struts>

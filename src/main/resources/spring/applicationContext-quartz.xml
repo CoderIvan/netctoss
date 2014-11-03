@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+		
+	<!-- Bean -->
+	<bean id="createBill" class="com.tarena.netctoss.quartz.CreateBillJob"/>
+	<bean id="initPrivilege" class="com.tarena.netctoss.quartz.InitPrivilege"/>
+	<!-- 任务 -->
+	<bean id="createBilljob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="createBill"/>
+		<property name="targetMethod" value="myJob"/>
+	</bean>
+	<!-- 触发器 -->
+	<bean id="createBillTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="createBilljob"/>
+		<property name="cronExpression" value="59 59 23 l * ?"/>
+	</bean>
+	
+	<!-- 调度器 -->
+	<bean id="tiggerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="createBillTrigger"/>
+			</list>
+		</property>
+	</bean>
+</beans>

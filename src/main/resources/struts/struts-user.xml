@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="user-package" extends="main-default" namespace="/user">
+		<action name="info" class="com.tarena.netctoss.action.user.UserAction" method="info">
+			<result>/WEB-INF/JSP/user/user_info.jsp</result>
+		</action>
+		<action name="updateInfo" class="com.tarena.netctoss.action.user.UserAction" method="updateInfo"/>
+		
+		<action name="password" class="com.tarena.netctoss.action.BaseAction" >
+			<result>/WEB-INF/JSP/user/user_password.jsp</result>
+		</action>
+		<action name="updatePwd" class="com.tarena.netctoss.action.user.UserAction" method="updatePwd"/>
+	</package>
+</struts>

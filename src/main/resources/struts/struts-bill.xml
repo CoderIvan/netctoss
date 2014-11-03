@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="bill-package" extends="main-default" namespace="/bill">
+		<action name="index" class="com.tarena.netctoss.action.bill.BillListAction" method="index">
+			<result>/WEB-INF/JSP/bill/bill_list.jsp</result>
+		</action>
+		<action name="billItem" class="com.tarena.netctoss.action.bill.BillItemListAction" method="billItem">
+			<result>/WEB-INF/JSP/bill/bill_item.jsp</result>
+		</action>
+		<action name="serviceDetail" class="com.tarena.netctoss.action.bill.ServiceDetailListAction" method="serviceDetail">
+			<result>/WEB-INF/JSP/bill/bill_service_detail.jsp</result>
+		</action>
+	</package>
+</struts>

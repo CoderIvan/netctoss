@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<privileges>
+	<privilege id="1">
+		<name>角色管理</name>
+		<urls>
+			<url>/role/roleList</url>
+			<url>/role/addRole_save</url>
+			<url>/role/addRole_toPage</url>
+			<url>/role/modifyRole_load</url>
+			<url>/role/modifyRole_update</url>
+			<url>/role/deleteRole</url>
+		</urls>
+	</privilege> 
+	<privilege id="2">
+		<name>人员管理</name>
+		<urls>
+			<url>/admin/addAdmin_toPage</url>
+			<url>/admin/addAdmin_save</url>
+			<url>/admin/deleteAdmin</url>
+			<url>/admin/modifyAdmin_toPage</url>
+			<url>/admin/modifyAdmin_update</url>
+			<url>/admin/adminList</url>
+			<url>/admin/resetPwd</url>
+		</urls>
+	</privilege>
+	<privilege id="3">
+		<name>资费管理</name>
+		<urls>
+			<url>/cost/costList</url>
+			<url>/cost/costDetail</url>
+			<url>/cost/costDelete</url>
+			<url>/cost/costStart</url>
+			<url>/cost/toAdd</url>
+			<url>/cost/add</url>
+			<url>/cost/varlidataFeeName</url>
+			<url>/cost/cost_load</url>
+			<url>/cost/cost_update</url>
+		</urls>
+	</privilege> 
+	<privilege id="4">
+		<name>账务账号</name>
+		<urls>
+			<url>/account/toAccountList</url>
+			<url>/account/accountSearch</url>
+			<url>/account/toAccountAdd</url>
+			<url>/account/accountAdd</url>
+			<url>/account/findRecommenderId</url>
+			<url>/account/account_load</url>
+			<url>/account/account_modify</url>
+			<url>/account/accountDetail</url>
+			<url>/account/accountDelete</url>
+			<url>/account/accountSetStatus</url>
+		</urls>
+	</privilege> 
+	<privilege id="5">
+		<name>业务账号</name>
+		<urls>
+			<url>/service/toServiceList</url>
+			<url>/service/toAddService</url>
+			<url>/service/addService</url>
+			<url>/service/findAccount</url>
+			<url>/service/serviceModify_load</url>
+			<url>/service/serviceModify_save</url>
+			<url>/service/serviceDetail</url>
+			<url>/service/serviceStatusModify_open</url>
+			<url>/service/serviceStatusModify_pause</url>
+			<url>/service/serviceStatusModify_close</url>
+		</urls>
+	</privilege> 
+	<privilege id="6">
+		<name>账单管理</name>
+		<urls>
+			<url>/bill/billList</url>
+			<url>/bill/billItemList</url>
+			<url>/bill/billServiceDetail</url>
+		</urls>
+	</privilege> 
+	<privilege id="7">
+		<name>报表管理</name>
+		<urls>
+			<url>/report/customerDuration</url>
+			<url>/report/durationTop3</url>
+			<url>/report/allCount</url>
+		</urls>
+	</privilege> 
+	<privilege id="8">
+		<name>实习生A</name>
+		<urls>
+			<url>/cost/costList</url>
+			<url>/service/toServiceList</url>
+		</urls>
+	</privilege> 
+</privileges>

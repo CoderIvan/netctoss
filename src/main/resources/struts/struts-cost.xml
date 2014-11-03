@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="cost-package" extends="main-default" namespace="/cost">
+		<!-- 查看资费列表 -->
+		<action name="index" class="com.tarena.netctoss.action.cost.CostListAction" method="list">
+			<result>/WEB-INF/JSP/cost/cost_list.jsp</result>
+		</action>
+		
+		<!-- 添加资费 -->
+		<action name="toAdd" class="com.tarena.netctoss.action.cost.AddCostAction">
+			<result>/WEB-INF/JSP/cost/cost_add.jsp</result>
+		</action>
+		<action name="add" class="com.tarena.netctoss.action.cost.AddCostAction" method="add"/>
+		
+		<!-- 开通、删除资费 -->
+		<action name="open" class="com.tarena.netctoss.action.cost.CostStatusAction" method="open"/>
+		<action name="delete" class="com.tarena.netctoss.action.cost.CostStatusAction" method="delete"/>
+		
+		<!-- 查看资费信息 -->
+		<action name="detail" class="com.tarena.netctoss.action.cost.CostDetailAction" method="detail">
+			<result>/WEB-INF/JSP/cost/cost_detail.jsp</result>
+		</action>
+		
+		<!-- 更新资费信息 -->
+		<action name="toUpdate" class="com.tarena.netctoss.action.cost.CostUpdateAction" method="toUpdate">
+			<result>/WEB-INF/JSP/cost/cost_modi.jsp</result>
+		</action>
+		<action name="update" class="com.tarena.netctoss.action.cost.CostUpdateAction" method="update"/>
+	</package>
+</struts>
